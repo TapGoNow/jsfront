@@ -1,0 +1,83 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Untitled Document</title>
+		<script type="text/javascript" src="../../script/jquery-1.7.2.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("input:eq(0)").click(function(){
+					//下拉列表被选中的方式
+					//1. $("#single :nth-child(3)").prop("selected", "selected");
+					//2. 为下拉列表赋值为我们要选中的那一项的value值
+					$("#single").val("s3");
+				});
+				
+				$("input:eq(1)").click(function(){
+					//使多选下拉框选中的'选择2号'和'选择4号'被选中
+					//option不指定value 默认是中间的文本
+					$("#multiple").val(["选择2号","选择4号"]);
+				
+				});
+				
+				//使多选框的'多选2'和'多选4'被选中
+				$("input:eq(2)").click(function(){
+					//要达到选中的目的 一定要传数组
+					$(":checkbox[name='c']").val(["check2", "check4"]);
+				});
+				
+				//使单选框的'单选2'被选中
+				$("input:eq(3)").click(function(){
+					$(":radio[name='r']").val(["radio2"]);
+				});
+				
+				//打印已经被选中的值
+				$("input:eq(4)").click(function(){
+					$(":checked").each(function(){
+						alert(this.value);
+					});
+				});
+				
+			});
+		
+		</script>
+	</head>
+	<body>
+		
+		<input type="button" value="使单选下拉框的'选择3号'被选中"/>
+		<input type="button" value="使多选下拉框选中的'选择2号'和'选择4号'被选中"/><br>
+		<input type="button" value="使多选框的'多选2'和'多选4'被选中"/>
+		<input type="button" value="使单选框的'单选2'被选中"/><br>
+		<input type="button" value="打印已经被选中的值"><br>
+ 
+		<br/>
+		
+		<select id="single" name="scheck">
+		  <option value="s1">选择1号</option>
+		  <option value="s2">选择2号</option>
+		  <option value="s3">选择3号</option>
+		</select>
+		
+		<select id="multiple" multiple="multiple" style="height:120px;">
+		  <option selected="selected">选择1号</option>
+		  <option>选择2号</option>
+		  <option>选择3号</option>
+		  <option>选择4号</option>
+		  <option selected="selected">选择5号</option>
+		</select>
+		
+		<br/><br/>
+
+		<input type="checkbox" name="c" value="check1"/> 多选1
+		<input type="checkbox" name="c" value="check2"/> 多选2
+		<input type="checkbox" name="c" value="check3"/> 多选3
+		<input type="checkbox" name="c" value="check4"/> 多选4
+		
+		<br/>
+		
+		<input type="radio" name="r" value="radio1"/> 单选1
+		<input type="radio" name="r"  value="radio2"/> 单选2
+		<input type="radio" name="r"  value="radio3"/> 单选3
+
+	</body>
+</html>

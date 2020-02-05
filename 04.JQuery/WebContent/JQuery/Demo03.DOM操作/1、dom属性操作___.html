@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../script/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+/**
+HTML代码/文本/值
+html(): innerHTML 1.如果不传递参数是获取元素里面的HTML代码  2. 如果传入值,代表将元素中的HTML代码替换为我们的新值
+text()
+val()
+
+属性
+attr(name|pro|key,val|fn)  
+ 1、a.attr('name')取出a的name值   2、a.attr("name","username")把a的name值设置为username
+ 
+removeAttr(name) 
+a.removeAttr('class')    移除a的class属性
+
+
+prop(name|pro|key,val|fn)1.6+ 
+1、a.prop('id')  取出a的id值   2、a.prop('id',"bj")  设置a的id值为bj
+removeProp(name)1.6+
+a.removeProp('class') 移除a的class属性
+
+
+ 
+ */
+
+</script>
+<script type="text/javascript">
+$(function(){
+	$("#btn1").click(function(){
+		//this代表当前被点击的对象 Dom对象
+		$(this).html("<i>解决</i>");
+		//$(this).text("<i>解决</i>");
+		
+		
+		
+	});
+	
+	//val() 获取标签的value值
+	$("#btn2").click(function(){
+		//.val()  获取值  .val(参数) 赋值
+		//alert($("input:first").val());
+		
+		$("input:first").val("hh")
+	});
+	
+	//attr("")  1.传入一个参数 ,获取这个参数的值  2. 传入两个参数 为前面的属性赋值为后面的值
+	$("#btn3").click(function(){
+		$("input:eq(3)").attr("value", "篮球");
+		alert($("input:eq(3)").attr("value"));
+	});
+	
+	//prop()  1.获取属性值  2. 设置属性值
+	//以后都用prop()方法 不要用attr 但是prop在获取自定义属性性 不如attr 此时用attr
+	$("#btn4").click(function(){
+		/* alert($(":checkbox:eq(1)").prop("checked"));
+		alert($(":checkbox:eq(1)").attr("checked")); */
+		$(":checkbox:eq(0)").attr("checked", false);
+	});
+	
+
+})
+</script>
+
+</head>
+<body>
+<button id="btn1"><i>获取文本框的name值</i></button>
+<button id="btn2">获取文本框的value值</button>
+<button id="btn3">attr()获取第三个多选框的name值</button>
+<button id="btn4">获取选择框的选中状态</button>
+<form action="#" id="form1">
+	文本框:<input  name="a" value="abc" type="text"/><br/>
+	多选框:<input type="checkbox" name="interest" value="篮球" checked="checked">
+	<input type="checkbox" name="interest" value="zuqiu"/>
+	<input type="checkbox" name="interest" value="乒乓">
+	<input type="checkbox" name="interest" value="御马">
+</form>
+
+</body>
+</html>

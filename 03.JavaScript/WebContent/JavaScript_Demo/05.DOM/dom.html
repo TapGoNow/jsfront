@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var aEle = document.getElementById("aid");	//找到的是元素节点
+		//alert("nodeName:" + aEle.nodeName);
+		//alert("nodeValue:" + aEle.nodeValue);
+		
+		//返回元素节点的属性节点
+		var attraEle = aEle.getAttributeNode("id");
+		//alert("nodeName:" + attraEle.nodeName);
+		//alert("nodeValue:" + attraEle.nodeValue);
+		//alert("nodeType:" + attraEle.nodeType);
+		
+		//返回节点第一个子节点
+		var textEle = aEle.firstChild;
+		alert("nodeName:" + textEle.nodeName);
+		alert("nodeValue:" + textEle.nodeValue);
+		alert("nodeType:" + textEle.nodeType);
+	}
+</script>
+</head>
+<body>
+<!-- DOM:文档对象模型,浏览器把html页面抽象成了一个document对象,包括页面里面的所有元素 
+	 BOM:浏览器对象模型
+	 
+	 dom模型是一个树形模型:
+	 - 节点:每一个元素都是一个节点
+	 - 父节点:
+	 - 子节点:
+	 - 祖先节点
+	 - 后代节点
+	 - 兄弟节点
+	
+	节点的三种类型 
+	 元素节点  
+	 属性节点
+	 文本节点
+	 
+	 所有的节点(封装好的对象),都有三个属性
+	 - nodeName:节点名
+	 - nodeValue:节点值
+	 - nodeType:节点类型,所有节点的nodeType值都会返回一个整数
+-->
+
+
+       <p id="pId">This is a paragraph</p>
+	   <a id="aid" href="https://www.baidu.com">我是百度</a>
+
+
+</body>
+</html>

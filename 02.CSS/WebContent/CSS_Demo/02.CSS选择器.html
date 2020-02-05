@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	p{
+		color: maroon;
+	}
+	
+	#p1{
+		color: gray;
+	}
+	
+	.cla {
+		/*
+		颜色的写法
+			- 直接写颜色名
+			- 写RGB值 red green blue 三个值都是0-255
+			- 写16进制的值  #两位数  两位数  两位数
+		*/
+	
+		/*color:rgb(255,0,0);*/
+		color:#000;
+	}
+	
+	#p1,.cla {
+		font-size: 55px;
+	}
+</style>
+</head>
+<!-- 选择器
+	1.标签选择器
+	标签名{
+		样式
+	}
+	
+	2.  id选择器
+		#id值{
+			样式
+		}
+		
+	3. 类选择器
+	.类的值{
+		样式
+	}
+	
+	4. 组选择器:选择一组元素
+	选择器1,选择器2,...{
+		样式值
+	}
+	
+	class  classname 规定元素的类型(classname),把元素进行分类
+	   id  规定元素的唯一标识id
+ -->
+
+<body>
+ 	<!-- 绝大多数的标签元素都具有通用的两个属性 -->
+	<p id="p1">明天你是否会想起</p>
+	<p>昨天你写的日记</p>
+	<p>明天你是否还惦记</p>
+	<p class="cla">曾经最爱哭的你</p>
+	<p class="cla">老师们都已想不起</p>
+	<p>猜不出问题的你</p>
+	<p>我也是偶然翻相片</p>
+	<p>才想起同桌的你</p>
+	<p>谁娶了多愁善感的你</p>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS中的函数</title>
+
+<script type="text/javascript">
+	//01.声明函数 方法不管在哪里声明 浏览器都会优先加载 变量必须先声明后使用 方法也是object类型
+	//访问控制符 返回类型 方法名(参数列表){方法体}
+	
+	/*function sum(a,b) {
+		alert(a+b);
+	}*/
+	
+	//将方法赋值给一个变量  方法名就是变量名 不用再写方法名
+	var sum = function(a,b) {
+		//NaN: Not a Number
+		alert(a+b);
+		
+	}
+	
+	
+	
+	//02.调用函数	在js中方法的唯一标识就是方法名(Java中是方法名＋参数列表),在js中没有方法重载 调用方法的时候参数可以选择是否传递
+	sum(1);	//写一个变量 1 + undefined
+	sum(); 	//不写变量 	得到的也是NaN
+</script>
+</head>
+<body>
+	
+	
+	
+</body>
+</html>

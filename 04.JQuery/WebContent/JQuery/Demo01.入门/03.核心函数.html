@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>核心函数</title>
+<script type="text/javascript" src="../script/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+	//核心函数的4个作用
+	//传入参数为[函数]时:在文档加载完成后执行这个函数
+	$(function(){
+		//alert("hello");
+	});
+	
+	//传入参数为[HTML字符串]时:根据这个字符串创建元素节点对象
+	$(function(){
+		$("<li>手机</li>").appendTo("#ulId");
+		
+		//传入参数为[选择器字符串]时:根据这个字符串查找元素节点对象
+		$("#aid").click(function(){
+			alert("你好");
+		});
+		
+		//传入参数为[DOM对象]时:将DOM对象包装为jQuery对象返回
+		//dom对象:使用原生的js查找(创建)到的元素
+		//jQuery:使用jquery查找到的元素(包装了的元素)都是Jquery对象
+		//dom对象--jquery对象 不能相互操作彼此的方法,如果想相互操作彼此的方法需要转化
+		//1. dom对象--->jQuery对象	$(dom对象)
+		//2. jquery对象---->dom对象	jquery对象[0]
+		var pEle = document.getElementById("p1");
+		$(pEle).click(function(){
+			alert("alert");
+		})
+		
+		var p2Ele = $("#p2");	//jQuery对象 实质是一个 dom数组对象
+		//alert(p2Ele);
+		//alert(pEle);
+		var pe = p2Ele[0];
+		//alert(pe.id);
+		
+		
+		$("p");	//找到了所有的p节点 [p1,p2,p3,p4]
+		alert($("p")[1].id);
+	});
+	
+
+	
+
+	
+	
+</script>
+<style type="text/css">
+	p{
+		display: block;
+		width: 200px;
+		height: 400px;
+		border: 1px solid;
+	}
+</style>
+
+</head>
+<body>
+	<p id="p1">你好1</p>
+	<p id="p2">你好2</p>
+	<p>你好3</p>
+	<p>你好4</p>
+	<ul id="ulId">
+		<li>相机</li>
+	</ul>
+	
+	<!-- #表示链接到本页面 -->
+	<a id="aid" href="#">你好</a>
+</body>
+</html>

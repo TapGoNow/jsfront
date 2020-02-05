@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>DOM增删改</title>
+		<link rel="stylesheet" type="text/css" href="style/css.css" />
+		<script type="text/javascript" src="../script/jquery-1.7.2.js"></script>
+		<script type="text/javascript">
+/*
+ * 
+ */
+			$(function(){
+				$("#btn01").click(function(){
+					//在#city中添加广州节点[append()]
+					//父节点.append(子节点) 追加到最后面
+					$("#city").append("<li>广州</li>");
+					
+				});
+				
+				$("#btn02").click(function(){
+					//创建一个"广州"节点,添加到#city下[appendTo()]
+					//把子节点添加到父节点中 appendTo()可以直接传入选择器字符串 传入jquery对象
+					$("<li>广州</li>").appendTo("#city");
+					
+				});
+				
+				$("#btn03").click(function(){
+					//创建一个"广州"节点,添加到#city下[prepend()]
+					//父节点.prepend(子节点)  在父节点里面插入一个子节点,追加到前面
+					$("#city").prepend("<li>广州</li>")
+				});
+				
+				$("#btn04").click(function(){
+					//创建一个"广州"节点,添加到#city下[prependTo()]
+					//prependTo() 子节点.prependTo(父节点) 把子节点添加到父节点前面
+					$("<li>广州</li>").prependTo("#city");
+					
+					
+				});
+				
+				
+				$("#btn05").click(function(){
+					//在#bj前面插入"广州"节点[before()]
+					$("#bj").before("<li>广州</li>");				
+				});
+				
+				$("#btn06").click(function(){
+					//将"广州"节点插入到#bj前面[insertBefore()]
+					$("<li>广州</li>").insertBefore("#bj");
+				});
+				
+				$("#btn07").click(function(){
+					//在#bj后面插入"广州"节点[after()]
+					$("#bj").after("<li>广州</li>");
+				});
+				
+				$("#btn08").click(function(){
+					//将"广州"节点插入到#bj后面[insertAfter()]
+					$("<li>广州</li>").insertAfter("#bj");
+				});
+				
+				
+				//替换节点
+				$("#btn09").click(function(){
+					//使用"广州"节点替换#bj节点[replaceWith()]
+					$("#bj").replaceWith("<li>广州</li>");
+				});
+				
+				$("#btn10").click(function(){
+					//使用"广州"节点替换#bj节点[replaceAll()]
+					$("<li>广州</li>").replaceAll("#bj");
+				});
+				
+	
+				$("#btn11").click(function(){
+					//删除#rl节点[remove()]
+					//a.remove() 删除a节点
+					//a.remove(selector) 将符合selector的的a删除
+					//$("#rl").remove();
+					$("li").remove("#rl");
+				});
+				
+				$("#btn12").click(function(){
+					//掏空#city节点[empty()]
+					//掏空和删除还是有很大不一样的
+					
+					$("#city").empty();
+				});
+				
+				$("#btn13").click(function(){
+					//读取#city内的HTML代码
+					alert($("#city").html());
+				});
+				
+				$("#btn14").click(function(){
+					//设置#bj内的HTML代码
+					$("#bj").html("<b>南京</b>");
+				});
+				
+				
+			
+				$("#btn15").click(function(){			
+					//将ul用div包裹起来[wrap()]	a.wrap(b) 是用b把a包裹起来
+					$("li").wrap("<span>hh</span>")
+					
+				});
+				$("#btn16").click(function(){
+					//将ul用div包裹起来[wrapAll()]
+					//a.wrapAll(b) 将所有匹配的元素用
+					$("ul").wrapAll("<span>hh</span>")
+					
+				});
+				$("#btn17").click(function(){
+					//将所有的li的文本使用&lt;b&gt;包裹[wrapInner()]
+					
+					$("li").wrapInner("<b></b>")
+					
+				});
+				$("#btn18").click(function(){
+					//移除所有button的父元素[unwrap()]
+					$("button").unwrap();
+					
+				});
+				
+			});
+			
+		
+		</script>
+		
+	</head>
+	<body>
+		<div id="total">
+			<div class="inner">
+				<p>
+					你喜欢哪个城市?
+				</p>
+
+				<ul id="city">
+					<li id="bj">北京</li>
+					<li>上海</li>
+					<li>东京</li>
+					<li>首尔</li>
+				</ul>
+
+				<br>
+				<br>
+
+				<p>
+					你喜欢哪款单机游戏?
+				</p>
+
+				<ul id="game">
+					<li id="rl">红警</li>
+					<li>实况</li>
+					<li>极品飞车</li>
+					<li>魔兽</li>
+				</ul>
+
+				<br />
+				<br />
+
+				<p>
+					你手机的操作系统是?
+				</p>
+
+				<ul id="phone"><li>IOS</li><li id="android">Android</li><li>Windows Phone</li></ul>
+			</div>
+
+			<div class="inner">
+				gender:
+				<input type="radio" name="gender" value="male"/>
+				Male
+				<input type="radio" name="gender" value="female"/>
+				Female
+				<br>
+				<br>
+				name:
+				<input type="text" name="name" id="username" value="abcde"/>
+			</div>
+		</div>
+		<div id="btnList">
+			<div><button id="btn01">在#city中添加广州节点[append()]</button></div>
+			<div><button id="btn02">创建一个"广州"节点,添加到#city下[appendTo()]</button></div>
+			<div><button id="btn03">创建一个"广州"节点,添加到#city下[prepend()]</button></div>
+			<div><button id="btn04">创建一个"广州"节点,添加到#city下[prependTo()]</button></div>
+			<div><button id="btn05">在#bj前面插入"广州"节点[before()]</button></div>
+			<div><button id="btn06">将"广州"节点插入到#bj前面[insertBefore()]</button></div>
+			<div><button id="btn07">在#bj后面插入"广州"节点[after()]</button></div>
+			<div><button id="btn08">将"广州"节点插入到#bj后面[insertAfter()]</button></div>
+			<div><button id="btn09">使用"广州"节点替换#bj节点[replaceWith()]</button></div>
+			<div><button id="btn10">使用"广州"节点替换#bj节点[replaceAll()]</button></div>
+			<div><button id="btn11">删除#rl节点[remove()]</button></div>
+			<div><button id="btn12">掏空#city节点[empty()]</button></div>
+			<div><button id="btn13">读取#city内的HTML代码</button></div>
+			<div><button id="btn14">设置#bj内的HTML代码</button></div>
+			
+			<div><button id="btn15">将ul用div包裹起来[wrap()]</button></div>
+			<div><button id="btn16">将ul用div包裹起来[wrapAll()]</button></div>
+			<div><button id="btn17">将所有的li的文本使用&lt;b&gt;包裹[wrapInner()]</button></div>
+			<div><button id="btn18">移除所有button的父元素[unwrap()]</button></div>
+		</div>
+	</body>
+</html>

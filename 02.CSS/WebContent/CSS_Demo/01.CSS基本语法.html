@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- CSS样式写在style标签里面 -->
+<style type="text/css">
+/* CSS注释 
+   选择器 {
+  	//这里定义要改变的样式
+  	样式名1:样式值1;
+  	样式名2:样式值2; 
+  }
+
+*/
+
+p {
+	color:blue;
+	font-size: 20px;
+	font-family: 微软雅黑;
+}
+</style>
+
+<link rel="stylesheet" type="text/css" href="p.css"/> 
+</head>
+<body>
+	
+	<!-- 样式直接写在标签style属性里面  
+		- 不能复用
+		- 不能编写大量的样式
+	-->
+	<p style="color:red">落霞与孤鹜齐飞,秋水共长天一色</p>
+	
+	<!-- 2.写在style标签里面 -->
+	<p>落霞与孤鹜齐飞,秋水共长天一色</p>
+	
+	<!-- 3.通过引入外部文件的方式编写样式 -->
+	<p>落霞与孤鹜齐飞,秋水共长天一色</p>
+	
+</body>
+</html>

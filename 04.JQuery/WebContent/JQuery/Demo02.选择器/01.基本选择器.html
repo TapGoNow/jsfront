@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Untitled Document</title>
+		<style type="text/css">
+			div, span, p {
+			    width: 140px;
+			    height: 140px;
+			    margin: 5px;
+			    background: #aaa;
+			    border: #000 1px solid;
+			    float: left;
+			    font-size: 17px;
+			    font-family: Verdana;
+			}
+			
+			div.mini {
+			    width: 55px;
+			    height: 55px;
+			    background-color: #aaa;
+			    font-size: 12px;
+			}
+			
+			div.hide {
+			    display: none;
+			}
+		</style>
+		<script type="text/javascript" src="../script/jquery-1.7.2.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//1.选择 id 为 one 的元素  #id
+				$("#btn1").click(function(){
+					$("#one").css("background-color","#bbffaa");
+				});
+
+				//2.选择 class 为 mini 的所有元素  .class
+				$("#btn2").click(function(){
+					$(".mini").css("background-color","#bbffaa");
+				});
+
+				//3.选择 元素名是 div 的所有元素 标签名选择器  直接传入标签名
+				$("#btn3").click(function(){
+					$("div").css("background-color","#bbffaa");
+				});
+
+				//4.选择所有的元素  所有元素选择器   *
+				$("#btn4").click(function(){
+					$("*").css("background-color","#bbffaa");
+				});
+
+				//5.选择所有的 span 元素和id为two的元素    [所有的 span 元素:标签选择器  标签名]
+				//								[id为two的元素:id选择器  #id]
+				//								组选择器  $(s1,s2...)
+				$("#btn5").click(function(){
+					$("span,#two").css("background-color","#bbffaa");
+				});
+			});
+		</script>
+	</head>
+	<body>
+<!-- 	<div>
+		<h1>基本选择器</h1>
+		<p>1、#id   id选择器   给核心函数$(),传入#+元素id值，
+				就会按照id查找出元素。document.getElementById("id")<br/>
+		   2、element 元素选择器  标签名选择器  给核心函数$(),传入标签名，
+		   		就会按照标签名找出元素。document.getElementsByTagName("tagName")；</br>
+		   3、.class 类名选择器  按照元素的class值查找出相应元素。
+		   4、*   匹配所有，会匹配所有的元素   $(*)会选出所有的dom对象
+		   5、selector1,selector2.....selectorN：组选择器，他会匹配满足这些选择器的所有元素
+		   $(selector1) + $(selector2) +………………+$(selectorN)
+		   
+		   注意点：
+		   1、id选择器返回的肯定是单个的对象。其他的这几个返回的都是jquery对象的集合
+		   2、返回的是jquery对象。查询到的是响应的dom对象会被封装返回
+		   3、组选择器中的selector可以是任意类型
+		</p>
+	</div>	 -->	
+		<input type="button" value="选择 id 为 one 的元素" id="btn1" />
+		<input type="button" value="选择 class 为 mini 的所有元素" id="btn2" />
+		<input type="button" value="选择 元素名是 div 的所有元素" id="btn3" />
+		<input type="button" value="选择 所有的元素" id="btn4" />
+		<input type="button" value="选择 所有的 span 元素和id为two的元素" id="btn5" />
+		
+		<br>
+		<div class="one" id="one">
+			id 为 one,class 为 one 的div
+			<div class="mini">class为mini</div>
+		</div>
+		<div class="one" id="two" title="test">
+			id为two,class为one,title为test的div
+			<div class="mini" title="other">class为mini,title为other</div>
+			<div class="mini" title="test">class为mini,title为test</div>
+		</div>
+		<div class="one">
+			<div class="mini">class为mini</div>
+			<div class="mini">class为mini</div>
+			<div class="mini">class为mini</div>
+			<div class="mini"></div>
+		</div>
+		<div class="one">
+			<div class="mini">class为mini</div>
+			<div class="mini">class为mini</div>
+			<div class="mini">class为mini</div>
+			<div class="mini" title="tesst">class为mini,title为tesst</div>
+		</div>
+		<div style="display:none;" class="none">style的display为"none"的div</div>
+		<div class="hide">class为"hide"的div</div>
+		<div>
+			包含input的type为"hidden"的div<input type="hidden" size="8">
+		</div>
+		<span class="one" id="span">^^span元素^^</span>
+	</body>
+</html>
+

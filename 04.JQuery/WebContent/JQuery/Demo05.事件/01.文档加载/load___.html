@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript"></script>
+<script type="text/javascript" src="../../script/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+	//$(function(){}) 和 window.onload = function(){}的区别
+	//1.$(function(){})  dom载入就绪 (浏览器绘制完dom树)
+	
+	//2. window.onload  文档加载完成以后执行
+	//	 不能编写多个 如果编写多个 只有最后一个生效
+	
+	
+	window.onload = function() {
+		alert("我是window.onload");
+	}
+	
+	window.onload = function() {
+		alert("我是onload2");
+	}
+	
+	//$可以编写多个
+	$(function(){
+		alert("我是$function");
+	});
+	
+	$(function(){
+		alert("我是$2");
+	})
+	
+</script>
+</head>
+<body>
+	<button>我是按钮</button>
+	
+	<!-- <iframe src="http://www.baidu.com"></iframe> -->
+	
+</body>
+</html>

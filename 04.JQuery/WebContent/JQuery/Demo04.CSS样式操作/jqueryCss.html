@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	
+	div{
+		width:100px;
+		height:260px;
+	}
+	
+	div.border{
+		border: 2px white solid;
+	}
+	
+	div.redDiv{
+		background-color: red;
+	}
+	
+	div.blackDiv{
+		border: 5px blue solid;
+	}
+	
+	
+	
+	
+</style>
+
+<script type="text/javascript" src="script/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+	
+
+	$(function(){
+		/*
+CSS
+css(name|pro|[,val|fn])       读写匹配元素的样式属性。 
+								a.css('color')取出a元素的color
+								a.css('color',"red")设置a元素的color为red
+位置
+offset([coordinates]) 		   获取匹配元素在当前视口的相对偏移。
+position() 					 获取匹配元素相对父元素的偏移。top 和 left
+scrollTop([val]) 			读写匹配元素相对滚动条顶部的偏移。
+scrollLeft([val]) 			获取匹配元素相对滚动条左侧的偏移。
+
+尺寸
+heigh([val|fn]) 			取得匹配元素当前计算的高度值（px）。如果赋值操作，设置当前元素的高度值
+width([val|fn]) 			取得匹配元素当前计算的宽度值（px）。如果赋值操作，设置当前元素的宽度值		
+innerHeight() 				获取第一个匹配元素内部区域高度（包括补白、不包括边框）。
+innerWidth() 				获取第一个匹配元素内部区域宽度（包括补白、不包括边框）。
+
+outerHeight([soptions])     获取第一个匹配元素外部高度（默认包括补白和边框）。
+outerWidth([options]) 		获取第一个匹配元素外部宽度（默认包括补白和边框）。
+
+CSS 类
+
+addClass(class|fn) 			为元素添加一个class值;<div class="mini big">
+removeClass([class|fn]) 	删除元素的class值；传递一个具体的class值，就会删除具体的某个class
+							a.removeClass()：移除所有的class值
+toggleClass(class|fn[,sw])	切换class值   a.toggleClass("mini");
+hasClass(class)   判断一个元素是否具有指定的class值
+**/
+		
+		var $divEle = $('div:first');
+		
+		$('#btn01').click(function(){
+			//addClass() - 向被选元素添加一个或多个类
+			$divEle.addClass("redDiv blackDiv");
+		});
+		
+		$('#btn02').click(function(){
+			//removeClass() - 从被选元素删除一个或多个类 
+			$divEle.removeClass()
+		});
+		
+		$('#btn03').click(function(){
+			//hasClass() - 检查被选元素是否包含指定的 class
+			var flag = $divEle.hasClass("redDiv");
+			alert(flag)
+		});
+		
+		$('#btn04').click(function(){
+			//toggleClass() - 对被选元素进行添加/删除类的切换操作 
+			//切换就是如果具有该类那么删除，如果没有那么添加上
+			$divEle.toggleClass("redDiv");
+		});
+		
+		$('#btn05').click(function(){
+			//css() - 设置或返回样式属性
+			//1、获取css属性值
+			var color = $divEle.css('background-color');
+			alert(color)
+			//2、设置css属性值
+			//$divEle.css('background-color',"black")
+			//3、css也可以设置多种  $("p").css({ color: "#ff0011", background: "blue" });
+			$divEle.css({
+				border:"5px yellow solid",
+				backgroundColor:"blue"
+			})
+		});
+		
+		$('#btn06').click(function(){
+			//height() - 设置或返回匹配元素的高度。
+			var oldH = $divEle.height();
+			$divEle.height(oldH*2);
+		});
+		
+		$('#btn07').click(function(){
+			//width() - 设置或返回匹配元素的宽度。
+			var oldW = $divEle.width();
+			alert(oldW)
+			$divEle.width(200)
+		});
+		
+		$('#btn08').click(function(){
+			//offset() - 返回第一个匹配元素相对于文档的位置。
+			var os = $divEle.offset();
+			//注意通过offset获取到的是一个对象，这个对象有两个属性top表示顶边距，left表示左边距
+			alert("顶边距："+os.top+" 左边距："+os.left);
+			
+			//调用offset设置元素位置时，也需要传递一个js对象，对象有两个属性top和left
+			//offset({ top: 10, left: 30 });
+			 $divEle.offset({
+				 top:50,
+				 left:60
+			 }); 
+		});
+		
+	})
+</script>
+</head>
+<body>
+
+	<table align="center">
+		<tr>
+			<td>
+				<div class="border">
+				</div>
+			</td>
+			
+			<td>
+				<div class="btn">
+					<input type="button" value="addClass()" id="btn01"/>
+					<input type="button" value="removeClass()" id="btn02"/>
+					<input type="button" value="hasClass()" id="btn03"/>
+					<input type="button" value="toggleClass()" id="btn04"/>
+					<input type="button" value="css()" id="btn05"/>
+					<input type="button" value="height()" id="btn06"/>
+					<input type="button" value="width()" id="btn07"/>
+					<input type="button" value="offset()" id="btn08"/>
+				</div>
+			</td>
+		</tr>
+	</table>
+	
+	
+	
+	<br /> <br />
+	
+	
+	<br /> <br />
+	
+	
+	
+</body>
+</html>

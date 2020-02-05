@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS中的事件</title>
+<script type="text/javascript">
+	
+	/*
+		动态的为元素绑定事件
+		1.找到元素
+		2.为元素相应的事件属性赋值一个方法. onclick 
+		3.当事件发生以后浏览器就会自动调用
+		
+		window.onload : 浏览器加载完成整个页面的时候调用后面的方法 
+	*/
+	
+	window.onload = function() {
+		//1.找到元素
+		var btn = document.getElementById("btnId");
+		//alert(btn);
+		//2.为元素绑定相应事件
+		btn.ondblclick = function(){
+			alert("23333");
+		}
+	}
+	
+	
+	
+</script>
+</head>
+<body>
+	<!-- 1.在标签的事件属性中编写js代码,调用方法--声明变量 -->
+	<button id="btnId" >sayHello</button>
+</body>
+</html>

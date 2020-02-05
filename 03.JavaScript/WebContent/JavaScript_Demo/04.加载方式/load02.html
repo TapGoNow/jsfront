@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>加载方式</title>
+<script type="text/javascript">
+	//最推荐的方式,当文档全部执行以后再去执行代码
+	window.onload = function(){
+		var btn = document.getElementById("btnId");
+		btn.onclick = function(){
+			alert("Hello JS");
+		};
+			
+	
+	};
+	
+</script>
+</head>
+<body>
+	<button id="btnId" >sayHello</button>
+	
+	<script type="text/javascript">
+		alert("hhhh");
+	</script>
+</body>
+</html>

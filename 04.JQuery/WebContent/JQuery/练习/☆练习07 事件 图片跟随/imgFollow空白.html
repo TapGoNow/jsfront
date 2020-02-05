@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body {
+		text-align: center;
+	}
+	#small {
+		margin-top: 150px;
+	}
+	#showBig {
+		position: absolute;
+		display: none;
+	}
+</style>
+<script type="text/javascript" src="script/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//1.鼠标在图片上移动的时候  显示大图片 大图片跟随鼠标移动
+		$("#small").mousemove(function(event){
+			var x = event.pageX;
+			var y = event.pageY;
+			$("#showBig").show();
+			$("#showBig").offset({
+				//为了不让鼠标进入大图片除法 移出事件 加一个偏移量
+				top:y + 20,
+				left:x + 20
+			});
+		}).mouseout(function(){
+			$("#showBig").hide();
+		});
+	});
+</script>
+</head>
+<body>
+
+	<img id="small" src="img/small.jpg" />
+	
+	<div id="showBig">
+		<img src="img/big.jpg">
+	</div>
+
+</body>
+</html>

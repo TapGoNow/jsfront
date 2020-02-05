@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Untitled Document</title>
+		<style type="text/css">
+			div, span, p {
+			    width: 140px;
+			    height: 140px;
+			    margin: 5px;
+			    background: #aaa;
+			    border: #000 1px solid;
+			    float: left;
+			    font-size: 17px;
+			    font-family: Verdana;
+			}
+			
+			div.mini {
+			    width: 55px;
+			    height: 55px;
+			    background-color: #aaa;
+			    font-size: 12px;
+			}
+			
+			div.hide {
+			    display: none;
+			}			
+		</style>
+		<script type="text/javascript" src="../script/jquery-1.7.2.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				function anmateIt(){
+					$("#mover").slideToggle("slow", anmateIt);
+				}
+				anmateIt();	
+				
+				/**
+子元素过滤选择器			子元素的都要使用父元素[空格]子元素的方式  因为选的 是子元素，
+						所以按照基本选择器后代元素的写法		
+:nth-child 				选择第几个子元素  $("ul li:nth-child(2)")
+:first-child 			选择第一个子元素
+:last-child 			选择最后一一个子元素
+:only-child 			选出只有一个子元素的元素，返回他的子元素
+
+				*/
+				//1.选取每个class为one的div父元素下的第2个子元素
+				$("#btn1").click(function(){
+					//索引值从1开始
+					//父元素选择器[空格]子元素选择器
+					$(".one :nth-child(2)").css("background","#bbffaa");
+					
+				});
+				//2.选取每个class为one的div父元素下的第一个子元素
+				$("#btn2").click(function(){
+					$(".one :first-child").css("background","#bbffaa");
+				});
+				//3.选取每个class为one的div父元素下的最后一个子元素
+				$("#btn3").click(function(){
+					$(".one :last-child").css("background","#bbffaa");
+				});
+				//4.如果class为one的div父元素下的仅仅只有一个子元素，那么选中这个子元素
+				$("#btn4").click(function(){
+					$(".one :only-child").css("background","#bbffaa");
+				});
+				
+			});
+		</script>
+	</head>
+	<body>		
+		<input type="button" value="选取每个class为one的div父元素下的第2个子元素." id="btn1"/>
+		<input type="button" value="选取每个class为one的div父元素下的第一个子元素." id="btn2"/>
+		<input type="button" value="选取每个class为one的div父元素下的最后一个子元素." id="btn3"/>
+		<input type="button" value="如果class为one的div父元素下的仅仅只有一个子元素，那么选中这个子元素." id="btn4"/>
+		
+		<br><br>
+		<div class="one" id="one">
+			id 为 one,class 为 one 的div
+			<div class="mini">class为mini</div>
+		</div>
+		<div class="one" id="two" title="test">
+			id为two,class为one,title为test的div
+			<div class="mini" title="other">class为mini,title为other</div>
+			<div class="mini" title="test">class为mini,title为test</div>
+		</div>
+		<div class="one">
+			<div class="mini">class为mini</div>
+			<div class="mini">class为mini</div>
+			<div class="mini">class为mini</div>
+			<div class="mini"></div>
+		</div>
+		<div class="one">
+			<div class="mini">class为mini</div>
+			<div class="mini">class为mini</div>
+			<div class="mini">class为mini</div>
+			<div class="mini" title="tesst">class为mini,title为tesst</div>
+		</div>
+		<div style="display:none;" class="none">style的display为"none"的div</div>
+		<div class="hide">class为"hide"的div</div>
+		<div>
+			包含input的type为"hidden"的div<input type="hidden" value="123456789" size="8">
+		</div>
+		<div id="mover">正在执行动画的div元素.</div>
+	</body>
+</html>
+
+

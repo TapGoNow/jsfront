@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="script/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//原生js会将文本节点也算上
+		var nodes = document.getElementById("ulId").childNodes;
+		//alert(nodes.length);
+		//jquery找的都是元素节点
+		//alert($("#ulId>*").length);
+		
+		$("ul li:nth-child(2n-1)").css("background-color", "red");
+	});
+
+</script>
+</head>
+<body>	
+	<ul id="ulId">
+		<li>你好1</li>
+		<li>你好2</li>
+		<li>你好3</li>
+		<li>你好4</li>
+		<li>你好5</li>
+		<li>你好6</li>
+		<li>你好7</li>
+		<li>你好8</li>
+		<li>你好9</li>
+	</ul>
+
+<form action="">
+	<button>提交</button>
+</form>
+
+</body>
+</html>

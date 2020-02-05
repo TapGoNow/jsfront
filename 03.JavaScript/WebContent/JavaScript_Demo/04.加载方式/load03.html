@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>加载方式</title>
+<script type="text/javascript">
+//下面的script代码先执行,window.onload要等所有文档加载全部完成才会执行
+	window.onload = function() {
+		alert("JS");
+	};
+</script>
+
+</head>
+<body>
+	<button id="btnId" >sayHello</button>
+	<!-- 10秒之后加载完成 -->
+	<img src="https://www.baidu.com/1.jpg"/>
+	
+	
+	<!-- 写在body标签后面,能获取到button,但是不符合习惯,只要写在我获取的元素后面 推荐使用,但是还是有毛病-->
+<script type="text/javascript">
+	//此时图片没有加载完成,导致这里无法引入
+	var btn = document.getElementById("btnId");
+	btn.onclick = function() {
+		alert("把script放后面了");
+	}
+	
+	alert("后面的");
+</script>
+</body>
+</html>

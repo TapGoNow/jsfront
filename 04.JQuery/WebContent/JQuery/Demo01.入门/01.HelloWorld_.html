@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<!-- 1.JQuery是JS的第三方库
+	 2.使用JQuery先引入
+-->
+<script type="text/javascript" src="../script/jquery-1.7.2.js"></script>
+
+<script type="text/javascript">
+	//编写js代码
+	//$():调用$方法      $():叫做jquery的核心函数
+	//为$()方法传入一个function(){}作为参数:就相当于window.onload =function() {写代码} 
+	$(function(){
+		//使用$(); 查找元素 使用.click()来绑定点击响应函数  把单击响应函数作为click()的参数传入即可
+		$("#btnId").click(function(){
+			alert("Hello World");
+		});
+	});
+</script>
+</head>
+<body>
+
+	<button id="btnId">SayHello</button>
+
+</body>
+</html>

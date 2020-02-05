@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+	#areaDiv {
+		border: 1px solid black;
+		width: 300px;
+		height: 50px;
+		margin-bottom: 10px;
+	}
+	
+	#showMsg {
+		border: 1px solid black;
+		width: 300px;
+		height: 20px;
+	}
+
+</style>
+<script type="text/javascript" src="../../script/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+//在事件相应函数参数列表中定义一个变量,事件发生时就会将事件对象传递给这个变量.里面会有事件的详细信息
+//我们可以用console.log(event)的方式查看这个对象的详情
+/* window.onload = function(){
+	var areaDiv = document.getElementById("areaDiv");
+	var showMsg = document.getElementById("showMsg");
+	//绑定事件会有一个响应函数
+	areaDiv.onmousemove = function(event){
+		//获取事件的详细信息
+		//获取事件对象,只需要在响应函数的参数列表里面定义一个变量,浏览器就会把事件的对象赋值给这个变量
+		//console.log(event);
+		showMsg.innerText = "X:" + event.pageX + " Y:" + event.pageY;
+	};
+}
+ */
+ 
+ //获取事件对象,只需要在响应函数的参数列表里面定义一个变量,浏览器就会把事件的对象赋值给这个变量
+ $(function(){
+/* 	 $("#areaDiv").mousemove(function(event){
+		 $("#showMsg").text("X:" + event.pageX + " Y:" + event.pageY);
+	 }); */
+	 
+	 $("#areaDiv").bind("click mousemove",function(event){
+		//1.当点击的时候弹出showMsg的文本值
+		if("click" == event.type) {
+			alert($("#showMsg").text());
+		}
+		//2.当mouseMove的时候showMsg里面显示详细信息
+		if("mousemove" == event.type) {
+			 $("#showMsg").text("X:" + event.pageX + " Y:" + event.pageY);
+		}
+	 });
+	 
+ });
+</script>
+</head>
+<body>
+
+	<div id="areaDiv"></div>
+	<div id="showMsg"></div>
+
+</body>
+</html>

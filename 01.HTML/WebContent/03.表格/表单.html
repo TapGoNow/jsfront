@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 表单:把数据提交给服务器
+		数据一般都是用户填写的
+		
+		form来定义一个表单
+		action:代表要提交到的地方,指定要提交到的资源位置
+		
+		form表单:表单里面要定义表单项
+		
+		表单是将用户输入的内容以键值对的方式提交
+		name:定义表单项的键名
+		value:定义表单项的值
+		表单提交多个表单项,键值对以&符连接
+		
+		input 定义一个文本框(type="text")
+		input 提交一个提交按钮(type="submit")
+		input 定义一个密码框(type="password")
+	 	input 定义一个单选按钮(type="radio") 需要将name属性设置相同才能起作用
+	 	input 定义一个多选框(type="checkbox") 一组多选框的name属性设为一致 还需要为value赋值
+	 	
+	 	select 定义一个下拉列表
+	 	定义选择项option
+	 	
+	 	method: 表单提交方式
+	 	get:
+	 	post
+	 	
+	 	用户不输入值得表单项,定value
+	 -->
+	 
+	 <form action="./target.html">
+	 	用户名:<input type="text" name="hh" value=""/><br/>
+	 	密码: <input type="password" name="pwd" value=""/><br/>
+	 	性别: 男:<input type="radio" name="sex" value="male"/> 女:<input type="radio" name="sex" value="female"/><br/>
+	 	爱好: 香蕉<input type="checkbox" name="like" value="ba"/> 苹果<input type="checkbox" name="likev" value="ap"/> 橘子<input type="checkbox" name="like" value="or"/><br/>
+	 	
+	 	最喜欢的老师:
+	 		<select name="teacher">
+	 			<option value="mouse">鼠</option>
+	 			<option value="niu">牛</option>
+	 			<option value="tu">兔</option>
+	 		</select>
+	 	
+	 	<input type="submit" value="登录"/>
+	 </form>
+</body>
+</html>

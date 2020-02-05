@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	
+	div{
+		width:100px;
+		height:260px;
+	}
+	
+
+	div.border{
+		border: 2px black solid;
+	}
+	div.redDiv{
+		background-color: red;
+	}
+	
+	div.blackDiv{
+		border: 5px blue solid;
+	}
+	
+	
+	
+	
+</style>
+
+<script type="text/javascript" src="script/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var $divEle = $("div:first");
+		
+		$("#btn01").click(function(){
+			//addClass() 向被选元素添加一个或多个类
+			//添加单个class 传入class值
+			//添加多个class 不同class值用空格隔开
+			$divEle.addClass("redDiv");
+		});
+		
+		$("#btn02").click(function(){
+			//removeClass() 从备选元素删除一个或者多个类
+			$divEle.removeClass("blackDiv");
+		});
+		
+		$("#btn03").click(function(){
+			//hasClass() 检查被选元素是否包含指定的class
+			//是否包含某个class
+			//alert($divEle.hasClass("redDiv"));
+			//是否包含多个class 顺序也要一致
+			alert($divEle.hasClass("redDiv blackDiv"));
+			
+		});
+		
+		$("#btn04").click(function(){
+			//toggleClass() 对备选元素进行添加/删除类的切换操作
+			//切换class值 如果有class值--->没有 如果没有--->有
+			$divEle.toggleClass("redDiv");
+			
+		});
+		
+		$("#btn05").click(function(){
+			//css()  设置或返回样式属性
+			alert($divEle.css("background-color"));
+		});
+		
+		$("#btn06").click(function(){
+			//height() 设置或者返回匹配元素的高度
+			//1. 传入值设置高度     2.不传值获取高度
+			alert($divEle.height());
+			$divEle.height(300);
+		});
+		
+		$("#btn07").click(function(){
+			//width() 设置或返回匹配元素的宽度
+			alert($divEle.width());
+		});
+		
+		$("#btn08").click(function(){
+			//offset() 返回第一个匹配元素相对于文档的位置
+			//alert($divEle.offset);
+			
+		});
+		
+	});
+
+
+</script>
+</head>
+<body>
+
+	<table align="center">
+		<tr>
+			<td style="height: 200px;">
+				<!-- 一个元素可以有多个class值 -->
+				<div class="blackDiv">
+				</div>
+			</td>
+			
+			<td>
+				<div class="btn">
+					<input type="button" value="addClass()" id="btn01"/>
+					<input type="button" value="removeClass()" id="btn02"/>
+					<input type="button" value="hasClass()" id="btn03"/>
+					<input type="button" value="toggleClass()" id="btn04"/>
+					<input type="button" value="css()" id="btn05"/>
+					<input type="button" value="height()" id="btn06"/>
+					<input type="button" value="width()" id="btn07"/>
+					<input type="button" value="offset()" id="btn08"/>
+				</div>
+			</td>
+		</tr>
+	</table>
+	
+	
+	
+	<br /> <br />
+	
+	
+	<br /> <br />
+	
+	
+	
+</body>
+</html>

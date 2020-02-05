@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../script/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+
+	$(function(){
+		//点击第一个按钮,让div的文字变红色,要求使用原生DOM操作
+		var b1 = document.getElementById("dom2dom");
+		b1.onclick = function(){
+			var text = document.getElementById("testDiv");
+			text.style.color = "red";
+		};
+		
+		//
+		var b2 = document.getElementById("dom2jQuery");
+		b2.onclick = function(){
+			var text = document.getElementById("testDiv");
+			$(text).css("color", "red");
+		};
+		
+		var b3 = document.getElementById("jQuery2jQuery");
+		b3.onclick = function(){
+			$("#testDiv").css("color", "red");
+		};
+		
+		var b4 = document.getElementById("jQuery2dom");
+		b4.onclick = function(){
+			$("#testDiv")[0].style.color = "red";
+		};
+	});
+
+</script>
+</head>
+<body>
+	<!-- // style="color: red"-->
+	<div id="testDiv" >Let's play some dota!</div>
+	
+	<button id="dom2dom">使用DOM对象调用DOM方法</button>
+	<button id="dom2jQuery">使用DOM对象调用jQuery方法</button>
+	<button id="jQuery2jQuery">使用jQuery对象调用jQuery方法</button>
+	<button id="jQuery2dom">使用jQuery对象调用DOM方法</button>
+
+</body>
+</html>
